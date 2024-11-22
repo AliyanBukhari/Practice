@@ -4,21 +4,23 @@ public class Main {
     public static void main(String[] args) {
 
                 Scanner scanner = new Scanner(System.in);
-                System.out.print("Enter the number of Fibonacci terms: ");
-                int n = scanner.nextInt();
-                if (n <= 0) {
-                    System.out.println("Please enter a positive number.");
-                    return;
-                }
+                System.out.print("Enter a number: ");
+                int num = scanner.nextInt();
 
-                int a = 0, b = 1;
-                System.out.print(a + " " + b);
-                for (int i = 2; i < n; i++) {
-                    int next = a + b;
-                    System.out.print(" " + next);
-                    a = b;
-                    b = next;
+                long result = factorial(num);
+                System.out.println("Factorial of " + num + " is: " + result);
+            }
+            public static long factorial(int num) {
+                if (num == 0 || num == 1) {
+                    return 1;
                 }
-                System.out.println();
+                long fact = 1;
+                for (int i = 2; i <= num; i++) {
+                    fact *= i;
+                }
+                return fact;
             }
         }
+
+
+
